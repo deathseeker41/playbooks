@@ -39,3 +39,4 @@
   copy: src=/root/playbooks-configs/ce7-yum-cron.conf dest=/etc/yum/yum-cron.conf owner=root group=root mode=644
   when: ansible_os_family == "RedHat" and ansible_distribution_major_version|int == 7
 
+- include: backup.yml
