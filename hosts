@@ -1,0 +1,14 @@
+[freebsd]
+newera ansible_python_interpreter=/usr/local/bin/python2
+ironworks ansible_python_interpreter=/usr/local/bin/python2
+
+[baremetal]
+jupiter
+
+[centos]
+jupiter
+granite
+yum.valhalla
+minecraft
+nemo.deathsfolly.net
+odin.deathsfolly.net
