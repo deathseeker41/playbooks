@@ -39,6 +39,9 @@
   copy: src=/root/playbooks-configs/ce7-yum-cron.conf dest=/etc/yum/yum-cron.conf owner=root group=root mode=644
   when: ansible_os_family == "RedHat" and ansible_distribution_major_version|int == 7
 
+- name: Create .scripts directory
+  file: path=/root/.scripts owner=0 group=0 mode=700 state=directory
+
 - include: backup.yml
 
 - name: Install reboot notifier
@@ -47,3 +50,11 @@
 - name: Setup reboot notifier cron
   cron: name="rebootnotify" special_time=reboot job="sh /root/.scripts/rebootnotify.sh > /dev/null"
 
+- name: Ensure EST set
+  file: src=/usr/share/zoneinfo/America/New_York dest=/etc/localtime state=link owner=0 group=0
+
+- name: Disable SELinux
+  selinux: state=disabled
+
+- name: Install Deaths Folly Repository
+  yum: name=http://yum.deathsfolly.net/deathsfolly-release-1.0-1.x86_64.rpm state=present

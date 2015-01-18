@@ -1,2 +1,5 @@
 ---
 - include: sshsetup.yml
+
+- name: Setup root forwarder
+  copy: content={{ admin_email }} dest=/root/.forward owner=0 group=0 mode=600
