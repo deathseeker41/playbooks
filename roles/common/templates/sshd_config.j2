@@ -1,0 +1,9 @@
+#{{ ansible_managed }}
+PermitRootLogin without-password
+AuthorizedKeysFile .ssh/authorized_keys
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+UsePAM yes
+PrintMotd no
+UsePrivilegeSeparation sandbox
+Subsystem sftp {{ sftp_location }}

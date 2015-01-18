@@ -40,3 +40,10 @@
   when: ansible_os_family == "RedHat" and ansible_distribution_major_version|int == 7
 
 - include: backup.yml
+
+- name: Install reboot notifier
+  copy: src=/root/playbooks-configs/rebootnotify.sh dest=/root/.scripts/rebootnotify.sh owner=root group=root mode=700
+
+- name: Setup reboot notifier cron
+  cron: name="rebootnotify" special_time=reboot job="sh /root/.scripts/rebootnotify.sh > /dev/null"
+
