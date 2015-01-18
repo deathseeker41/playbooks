@@ -1,0 +1,11 @@
+---
+- name: Install smartmontools
+  yum: name=smartmontools state=present
+
+- name: Copy smartd.conf configuration
+  copy: src=/root/playbooks-configs/smartd.conf dest=/etc/smartmontools/smartd.conf owner=root group=root mode=644
+  notify:
+    - restart smartd
+
+- name: Ensure smartd enabled and running
+  service: name=smartd state=started enabled=yes

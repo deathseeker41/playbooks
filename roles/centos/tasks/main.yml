@@ -1,0 +1,41 @@
+---
+#install all pkgs that all in-use versions of centos use
+- name: Install our base packages
+  yum: pkg={{item}} state=present
+  with_items:
+  - iptraf-ng
+  - chrony
+  - screen
+  - nano
+  - wget
+  - mtr
+  - rsync
+  - lsof
+  - unzip
+  - yum-cron
+  - bind-utils
+  - mailx
+
+- name: Start and enable needed services
+  service: name={{item}} state=started enabled=yes
+  with_items:
+  - crond
+  - chronyd
+  - firewalld
+  - NetworkManager
+  - tuned
+  - yum-cron
+
+- name: Stop and disable unneeded services
+  service: name={{item}} state=stopped enabled=no
+  with_items:
+  - iprdump
+  - iprinit
+  - iprupdate
+  - kdump
+  - avahi-daemon
+
+- name: Install CentOS 7 yum-cron.conf
+  copy: src=/root/playbooks-configs/ce7-yum-cron.conf dest=/etc/yum/yum-cron.conf owner=root group=root mode=644
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version|int == 7
+

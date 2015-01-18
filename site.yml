@@ -1,0 +1,15 @@
+---
+- name: Push common role
+  hosts: all
+  roles:
+    - common
+
+- name: Push baremetal role
+  hosts: baremetal
+  roles:
+    - baremetal
+
+- name: Push centos role
+  hosts: centos
+  roles:
+    - centos
