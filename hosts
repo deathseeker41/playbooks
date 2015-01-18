@@ -1,14 +1,14 @@
 [freebsd]
-newera ansible_python_interpreter=/usr/local/bin/python2
-ironworks ansible_python_interpreter=/usr/local/bin/python2
+newera.valhalla ansible_python_interpreter=/usr/local/bin/python2
+ironworks.valhalla ansible_python_interpreter=/usr/local/bin/python2
 
 [baremetal]
-jupiter
+jupiter.valhalla
 
 [centos]
-jupiter
-granite
+jupiter.valhalla
+granite.valhalla
 yum.valhalla
-minecraft
+minecraft.valhalla
 nemo.deathsfolly.net
 odin.deathsfolly.net

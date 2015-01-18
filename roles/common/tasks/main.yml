@@ -3,3 +3,6 @@
 
 - name: Setup root forwarder
   copy: content={{ admin_email }} dest=/root/.forward owner=0 group=0 mode=600
+
+- name: Install ansible-pull cron
+  cron: name="ansible-pull" minute="17" hour="6" job="ansible-pull -U https://github.com/deathseeker41/playbooks.git site.yml -i /root/.ansible/pull/{{ ansible_fqdn }}/hosts"
