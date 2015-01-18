@@ -2,8 +2,8 @@
 - name: Install smartmontools
   yum: name=smartmontools state=present
 
-- name: Copy smartd.conf configuration
-  copy: src=/root/playbooks-configs/smartd.conf dest=/etc/smartmontools/smartd.conf owner=root group=root mode=644
+- name: Install smartd.conf configuration
+  template: src=smartd.conf.j2 dest=/etc/smartmontools/smartd.conf owner=0 group=0 mode=644
   notify:
     - restart smartd
 

@@ -9,10 +9,14 @@
 
 - name: Push baremetal role
   hosts: baremetal
+  vars_files:
+    - "vars/common.yml"
   roles:
     - baremetal
 
 - name: Push centos role
   hosts: centos
+  vars_files:
+    - "vars/common.yml"
   roles:
     - centos

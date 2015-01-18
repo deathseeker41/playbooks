@@ -1,0 +1,3 @@
+#!/bin/sh
+#{{ ansible_managed }}
+echo "$(hostname) back online at $(date)" | mail -s "REBOOT: $(hostname -s)" {{ admin_email }}

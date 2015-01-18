@@ -1,9 +1,9 @@
 ---
 - name: Install backup.sh
-  copy: src=/root/playbooks-configs/backup.sh dest=/root/.scripts/backup.sh owner=root group=root mode=600
+  copy: src=backup.sh dest=/root/.scripts/backup.sh owner=0 group=0 mode=600
 
 - name: Install backup cron
-  cron: name="backup" minute="10" hour="12" weekday="0" user="root" job="bash /root/.scripts/backup.sh"
+  cron: name="backup" minute="10" hour="12" weekday="0" user="root" job="sh /root/.scripts/backup.sh"
 
 - name: Install backup private key
-  copy: src=/root/playbooks-configs/backup.key dest=/root/.ssh/backup.key owner=root group=root mode=600
+  copy: src=/root/playbooks-configs/backup.key dest=/root/.ssh/backup.key owner=0 group=0 mode=600

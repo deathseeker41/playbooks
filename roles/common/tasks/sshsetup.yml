@@ -1,6 +1,6 @@
 ---
   - name: Install SSH Key
-    authorized_key: user=root key="{{ lookup('file', '/root/.ssh/id_rsa.pub') }}"
+    authorized_key: user=root key="{{ admin_pubkey }}"
 
   - name: Install sshd_config
     template: src=sshd_config.j2

@@ -36,7 +36,7 @@
   - avahi-daemon
 
 - name: Install CentOS 7 yum-cron.conf
-  copy: src=/root/playbooks-configs/ce7-yum-cron.conf dest=/etc/yum/yum-cron.conf owner=root group=root mode=644
+  copy: src=ce7-yum-cron.conf dest=/etc/yum/yum-cron.conf owner=0 group=0 mode=644
   when: ansible_os_family == "RedHat" and ansible_distribution_major_version|int == 7
 
 - name: Create .scripts directory
@@ -45,7 +45,7 @@
 - include: backup.yml
 
 - name: Install reboot notifier
-  copy: src=/root/playbooks-configs/rebootnotify.sh dest=/root/.scripts/rebootnotify.sh owner=root group=root mode=700
+  template: src=rebootnotify.sh.j2 dest=/root/.scripts/rebootnotify.sh owner=0 group=0 mode=700
 
 - name: Setup reboot notifier cron
   cron: name="rebootnotify" special_time=reboot job="sh /root/.scripts/rebootnotify.sh > /dev/null"
