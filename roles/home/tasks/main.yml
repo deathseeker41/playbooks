@@ -1,0 +1,9 @@
+---
+- include: postfix.yml
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version|int == 7
+
+#TODO: convert to template
+- name: Install CentOS 7 Local Mirror Repository
+  copy: src=ce7-centos-base.repo dest=/etc/yum.repos.d/CentOS-Base.repo owner=0 group=0 mode=644
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version|int == 7
+

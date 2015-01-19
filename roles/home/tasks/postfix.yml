@@ -1,0 +1,11 @@
+---
+- name: Install Postfix
+  yum: pkg=postfix state=present
+
+- name: Start and enable Postfix
+  service: name=postfix state=started enabled=yes
+
+- name: Install CentOS 7 Postfix config
+  copy: src=ce7-main.cf dest=/etc/postfix/main.cf owner=0 group=0 mode=644
+  notify:
+   - restart postfix
