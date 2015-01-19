@@ -1,4 +1,10 @@
 ---
+- name: Install Deaths Folly Repository
+  yum: name=http://yum.deathsfolly.net/deathsfolly-release-1.0-1.x86_64.rpm state=present
+
+- name: Install EPEL repository
+  yum: pkg=epel-release state=present
+
 #install all pkgs that all in-use versions of centos use
 - name: Install our base packages
   yum: pkg={{item}} state=present
@@ -15,6 +21,7 @@
   - yum-cron
   - bind-utils
   - mailx
+  - ansible
 
 - name: Start and enable needed services
   service: name={{item}} state=started enabled=yes
@@ -55,6 +62,3 @@
 
 - name: Disable SELinux
   selinux: state=disabled
-
-- name: Install Deaths Folly Repository
-  yum: name=http://yum.deathsfolly.net/deathsfolly-release-1.0-1.x86_64.rpm state=present
