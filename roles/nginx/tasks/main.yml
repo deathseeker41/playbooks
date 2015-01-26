@@ -1,0 +1,33 @@
+---
+- name: Install nginx
+  yum: pkg=nginx state=present
+
+- name: Install PHP
+  yum: pkg={{item}} state=present
+  with_items:
+  - php-fpm
+  - php-mysql
+
+- name: Create server root
+  file: path=/srv/www owner=nginx group=nginx mode=750 state=directory
+
+- name: Install nginx config
+  copy: src=nginx.conf dest=/etc/nginx/nginx.conf owner=0 group=0 mode=644
+  notify:
+    - restart nginx
+
+- name: Install default vhost
+  template: src=nginx.default.j2 dest=/etc/nginx/conf.d/{{ ansible_fqdn }}.conf owner=0 group=0 mode=644
+  notify:
+    - restart nginx
+
+- name: Install php-fpm config
+  copy: src=php-fpm.www.conf dest=/etc/php-fpm.d/www.conf owner=0 group=0 mode=644
+  notify:
+    - restart php-fpm
+
+- name: Ensure nginx enabled and running
+  service: name=nginx state=started enabled=yes
+
+- name: Ensure php-fpm enabled and running
+  service: name=php-fpm state=started enabled=yes

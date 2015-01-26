@@ -22,6 +22,7 @@
   - bind-utils
   - mailx
   - ansible
+  - git
 
 - name: Start and enable needed services
   service: name={{item}} state=started enabled=yes
