@@ -24,3 +24,6 @@ www1.valhalla
 
 [nginx]
 www1.valhalla
+
+[mariadb]
+www1.valhalla
