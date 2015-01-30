@@ -12,6 +12,7 @@ yum.valhalla
 minecraft.valhalla
 odin.deathsfolly.net
 www1.valhalla
+krieger.deathsfolly.net
 
 [home]
 minecraft.valhalla
@@ -24,6 +25,7 @@ www1.valhalla
 
 [nginx]
 www1.valhalla
+krieger.deathsfolly.net
 
 [mariadb]
 www1.valhalla

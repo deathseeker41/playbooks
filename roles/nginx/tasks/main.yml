@@ -11,6 +11,9 @@
 - name: Create server root
   file: path=/srv/www owner=nginx group=nginx mode=750 state=directory
 
+- name: Create server vhost root
+  file: path=/srv/www/{{ ansible_fqdn }} owner=nginx group=nginx mode=750 state=directory
+
 - name: Install nginx config
   copy: src=nginx.conf dest=/etc/nginx/nginx.conf owner=0 group=0 mode=644
   notify:
