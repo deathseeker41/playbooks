@@ -1,31 +1,23 @@
-[freebsd]
-newera.valhalla ansible_python_interpreter=/usr/local/bin/python2
-ironworks.valhalla ansible_python_interpreter=/usr/local/bin/python2
-
 [baremetal]
 jupiter.valhalla
 
 [centos]
+odin.deathsfolly.net
+krieger.deathsfolly.net
 jupiter.valhalla
 granite.valhalla
-yum.valhalla
+srcds1.valhalla
 minecraft.valhalla
-odin.deathsfolly.net
-www1.valhalla
-krieger.deathsfolly.net
+annihilator.valhalla
 
 [home]
-minecraft.valhalla
 jupiter.valhalla
 granite.valhalla
-yum.valhalla
-newera.valhalla ansible_python_interpreter=/usr/local/bin/python2
-ironworks.valhalla ansible_python_interpreter=/usr/local/bin/python2
-www1.valhalla
+srcds1.valhalla
+minecraft.valhalla
+annihilator.valhalla
 
 [nginx]
-www1.valhalla
 krieger.deathsfolly.net
 
 [mariadb]
-www1.valhalla
