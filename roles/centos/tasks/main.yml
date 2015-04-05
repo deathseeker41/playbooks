@@ -17,7 +17,6 @@
   - yum-cron
   - bind-utils
   - mailx
-  - ansible
   - git
   - cronie
   - libselinux-python
