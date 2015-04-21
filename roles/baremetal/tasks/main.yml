@@ -9,3 +9,11 @@
 
 - name: Ensure smartd enabled and running
   service: name=smartd state=started enabled=yes
+
+- name: Install CE7 timekeeping
+  yum: name=chrony state=present
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version|int == 7
+
+- name: Ensure CE7 timekeeper running
+  service: name=chronyd state=started enabled=yes
+  when: ansible_os_family == "RedHat" and ansible_distribution_major_version|int == 7

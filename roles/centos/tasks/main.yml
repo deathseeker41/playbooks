@@ -21,6 +21,7 @@
   - cronie
   - libselinux-python
   - selinux-policy
+  - which
 
 - name: Start and enable needed services
   service: name={{item}} state=started enabled=yes
