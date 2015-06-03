@@ -1,0 +1,13 @@
+- name: Install our base packages
+  yum: pkg={{item}} state=present
+  with_items:
+  - screen
+  - pidgin
+  - htop
+  - guake
+  - thunderbird
+  - keepassx
+  - gedit
+  - git
+  - lynx
+
