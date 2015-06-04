@@ -41,11 +41,3 @@
     - "vars/common.yml"
   roles:
     - mariadb
-
-- name: Push workstation role
-  hosts: workstation
-  vars_files:
-    - "vars/common.yml"
-  roles:
-    - workstation
-
