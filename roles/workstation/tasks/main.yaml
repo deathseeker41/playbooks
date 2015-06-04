@@ -11,3 +11,21 @@
   - git
   - lynx
 
+- name: Stop and disable unneeded services
+  service: name={{item}} state=stopped enabled=no
+  with_items:
+  - sshd
+
+- name: Disable SELinux
+  selinux: state=disabled
+
+- name: Remove unneeded packages
+  yum: pkg={{item}} state=absent
+  with_items:
+  - xfdashboard
+  - geany
+  - pragha
+  - xfburn
+  - abiword
+  - gnumeric
+
