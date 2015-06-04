@@ -37,6 +37,7 @@
   - iprupdate
   - kdump
   - avahi-daemon
+  - tuned
 
 - name: Install CentOS 7 yum-cron.conf
   copy: src=ce7-yum-cron.conf dest=/etc/yum/yum-cron.conf owner=0 group=0 mode=644
