@@ -10,6 +10,7 @@
   - gedit
   - git
   - lynx
+  - sshpass
 
 - name: Stop and disable unneeded services
   service: name={{item}} state=stopped enabled=no

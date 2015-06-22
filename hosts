@@ -11,6 +11,7 @@ minecraft.valhalla
 annihilator.valhalla
 test1.valhalla
 ironworks.valhalla
+wow.valhalla
 
 [home]
 jupiter.valhalla
@@ -20,9 +21,10 @@ minecraft.valhalla
 annihilator.valhalla
 test1.valhalla
 ironworks.valhalla
+wow.valhalla
 
 [nginx]
 krieger.deathsfolly.net
 
 [mariadb]
-
+krieger.deathsfolly.net
