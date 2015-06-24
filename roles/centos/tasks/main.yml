@@ -14,7 +14,6 @@
   - rsync
   - lsof
   - unzip
-  - yum-cron
   - bind-utils
   - mailx
   - git
@@ -29,7 +28,6 @@
   service: name={{item}} state=started enabled=yes
   with_items:
   - crond
-  - yum-cron
 
 - name: Stop and disable unneeded services
   service: name={{item}} state=stopped enabled=no
@@ -41,9 +39,10 @@
   - avahi-daemon
   - tuned
 
-- name: Install CentOS 7 yum-cron.conf
-  copy: src=ce7-yum-cron.conf dest=/etc/yum/yum-cron.conf owner=0 group=0 mode=644
-  when: ansible_os_family == "RedHat" and ansible_distribution_major_version|int == 7
+- name: Uninstall unneeded packages
+  yum: pkg={{item}} state=absent
+  with_items:
+  - yum-cron
 
 - name: Create .scripts directory
   file: path=/root/.scripts owner=0 group=0 mode=700 state=directory
