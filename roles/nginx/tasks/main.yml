@@ -14,7 +14,7 @@
   - php-devel
 
 - name: Create server root
-  file: path=/srv/www owner=nginx group=nginx mode=750 state=directory
+  file: path=/srv/www owner=nginx group=nginx mode=755 state=directory
 
 - name: Create server vhost root
   file: path=/srv/www/{{ ansible_fqdn }} owner=nginx group=nginx mode=750 state=directory

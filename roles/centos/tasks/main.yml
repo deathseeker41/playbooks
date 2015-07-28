@@ -12,6 +12,7 @@
   - wget
   - mtr
   - rsync
+  - deltarpm
   - lsof
   - unzip
   - bind-utils
