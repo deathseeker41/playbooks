@@ -39,6 +39,7 @@
   - kdump
   - avahi-daemon
   - tuned
+  - NetworkManager
 
 - name: Uninstall unneeded packages
   yum: pkg={{item}} state=absent
