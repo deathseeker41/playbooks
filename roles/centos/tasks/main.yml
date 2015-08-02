@@ -58,7 +58,7 @@
   cron: name="rebootnotify" special_time=reboot job="sh /root/.scripts/rebootnotify.sh > /dev/null"
 
 - name: Ensure EST set
-  file: src=/usr/share/zoneinfo/America/New_York dest=/etc/localtime state=link owner=0 group=0
+  file: src=/usr/share/zoneinfo/America/New_York dest=/etc/localtime state=link owner=0 group=0 force=yes
 
 - name: Disable SELinux
   selinux: state=disabled
