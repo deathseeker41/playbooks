@@ -1,10 +1,8 @@
 [baremetal]
-jupiter.valhalla
 
 [centos]
 odin.deathsfolly.net
 krieger.deathsfolly.net
-jupiter.valhalla
 granite.valhalla
 srcds1.valhalla
 minecraft.valhalla
@@ -14,7 +12,6 @@ ironworks.valhalla
 wow.valhalla
 
 [home]
-jupiter.valhalla
 granite.valhalla
 srcds1.valhalla
 minecraft.valhalla
