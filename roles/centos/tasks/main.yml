@@ -24,6 +24,7 @@
   - which
   - nagios-plugins-load
   - nagios-plugins-check-updates
+  - tar
 
 - name: Start and enable needed services
   service: name={{item}} state=started enabled=yes
