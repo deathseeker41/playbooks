@@ -5,3 +5,6 @@
 - name: Ensure mariadb enabled and running
   service: name=mariadb state=started enabled=yes
 
+- name: Install MariaDB settings file
+  copy: src=mysettings.cnf dest=/etc/my.cnf.d/mysettings.cnf owner=0 group=0 mode=644
+
