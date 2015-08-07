@@ -34,6 +34,25 @@
   notify:
     - restart php-fpm
 
+- name: See if Zend Opcache is installed
+  command: /usr/bin/pecl info ZendOpcache
+  register: opcachestartresult
+
+- name: Install Zend Opcache
+  command: /usr/bin/pecl install ZendOpcache
+  when: opcachestartresult|failed
+
+
+- name: See if Zend Opcache is installed now
+  command: /usr/bin/pecl info ZendOpcache
+  register: opcacheendresult
+
+- name: Add Zend Opcache to php.d
+  copy: content="zend_extension=/usr/lib64/php/modules/opcache.so" dest=/etc/php.d/opcache.ini owner=0 group=0 mode=644
+  when: opcacheendresult|success
+  notify:
+    - restart php-fpm
+
 - name: Ensure nginx enabled and running
   service: name=nginx state=started enabled=yes
 
