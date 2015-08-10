@@ -40,7 +40,9 @@
   - kdump
   - avahi-daemon
   - tuned
-  - NetworkManager
+
+- name: Stop and disable NetworkManager
+  service: name=NetworkManager state=stopped enabled=no
   notify:
     - restart network
 
