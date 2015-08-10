@@ -42,7 +42,7 @@
   - tuned
   - NetworkManager
   notify:
-    - restart sshd
+    - restart network
 
 - name: Uninstall unneeded packages
   yum: pkg={{item}} state=absent
