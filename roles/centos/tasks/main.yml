@@ -40,6 +40,9 @@
   - kdump
   - avahi-daemon
   - tuned
+  - NetworkManager
+  notify:
+    - restart sshd
 
 - name: Uninstall unneeded packages
   yum: pkg={{item}} state=absent
