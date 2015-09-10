@@ -8,22 +8,16 @@ granite.valhalla
 srcds1.valhalla
 minecraft.valhalla
 annihilator.valhalla
-test1.valhalla
-ironworks.valhalla
 wow.valhalla
 jupiter.valhalla
-www1.valhalla
 
 [home]
 granite.valhalla
 srcds1.valhalla
 minecraft.valhalla
 annihilator.valhalla
-test1.valhalla
-ironworks.valhalla
 wow.valhalla
 jupiter.valhalla
-www1.valhalla
 
 [nginx]
 krieger.deathsfolly.net
@@ -31,4 +25,3 @@ www1.valhalla
 
 [mariadb]
 krieger.deathsfolly.net
-www1.valhalla
