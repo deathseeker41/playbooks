@@ -25,3 +25,10 @@ www1.valhalla
 
 [mariadb]
 krieger.deathsfolly.net
+
+[freebsd]
+azmodan.valhalla
+demon.valhalla
+2001:470:8:ef9::4
+[freebsd:vars]
+ansible_python_interpreter=/usr/local/bin/python2
