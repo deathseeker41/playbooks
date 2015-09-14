@@ -30,7 +30,7 @@
     - restart nginx
 
 - name: Install php-fpm config
-  copy: src=php-fpm.www.conf dest=/etc/php-fpm.d/www.conf owner=0 group=0 mode=644
+  template: src=php-fpm.www.conf.j2 dest=/etc/php-fpm.d/www.conf owner=0 group=0 mode=644
   notify:
     - restart php-fpm
 
