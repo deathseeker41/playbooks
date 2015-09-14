@@ -1,0 +1,6 @@
+---
+- name: Disable TCP listen for syslogd
+  lineinfile: dest=/etc/rc.conf regexp=^syslogd_flags line=syslogd_flags=\"-ss\"
+  notify:
+    - restart syslogd
+
