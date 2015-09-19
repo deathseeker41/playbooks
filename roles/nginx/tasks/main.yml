@@ -37,6 +37,7 @@
 - name: See if Zend Opcache is installed
   command: /usr/bin/pecl info ZendOpcache
   register: opcachestartresult
+  ignore_errors: yes
 
 - name: Install Zend Opcache
   command: /usr/bin/pecl install ZendOpcache
