@@ -1,3 +1,6 @@
+- name: Install OwnCloud repo
+  get_url: url=http://download.opensuse.org/repositories/isv:ownCloud:desktop/Fedora_{{ ansible_distribution_major_version }}/isv:ownCloud:desktop.repo dest=/etc/yum.repos.d/owncloud.repo mode=644
+
 - name: Install our base packages
   yum: pkg={{item}} state=present
   with_items:
@@ -11,6 +14,7 @@
   - git
   - lynx
   - sshpass
+  - owncloud-client
 
 - name: Stop and disable unneeded services
   service: name={{item}} state=stopped enabled=no
