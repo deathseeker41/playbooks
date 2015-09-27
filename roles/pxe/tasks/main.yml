@@ -1,0 +1,9 @@
+---
+- name: Install PXE packages
+  yum: pkg={{item}} state=present
+  with_items:
+  - cobbler
+
+- name: Configure PXE interface
+  template: src=pxenet-config.j2 dest=/etc/sysconfig/network-scripts/ifcfg-{{ pxenet }} owner=0 group=0 mode=644
+  notify: restart network
