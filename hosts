@@ -5,20 +5,12 @@ jupiter.valhalla
 odin.deathsfolly.net
 krieger.deathsfolly.net
 granite.valhalla
-srcds1.valhalla
-minecraft.valhalla
-annihilator.valhalla
-wow.valhalla
 jupiter.valhalla
 centos1.valhalla
 janus.valhalla
 
 [home]
 granite.valhalla
-srcds1.valhalla
-minecraft.valhalla
-annihilator.valhalla
-wow.valhalla
 jupiter.valhalla
 centos1.valhalla
 janus.valhalla
@@ -33,6 +25,3 @@ krieger.deathsfolly.net
 2001:470:8:ef9::4
 [freebsd:vars]
 ansible_python_interpreter=/usr/local/bin/python2
-
-[pxe]
-janus.valhalla pxenet=eth1 pxeip=10.99.99.1
