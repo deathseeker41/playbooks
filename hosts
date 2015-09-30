@@ -8,12 +8,16 @@ granite.valhalla
 jupiter.valhalla
 centos1.valhalla
 janus.valhalla
+minecraft.valhalla
+centos2.valhalla
 
 [home]
 granite.valhalla
 jupiter.valhalla
 centos1.valhalla
 janus.valhalla
+minecraft.valhalla
+centos2.valhalla
 
 [nginx]
 krieger.deathsfolly.net
