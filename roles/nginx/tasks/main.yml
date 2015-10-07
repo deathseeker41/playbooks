@@ -43,7 +43,6 @@
   command: /usr/bin/pecl install ZendOpcache
   when: opcachestartresult|failed
 
-
 - name: See if Zend Opcache is installed now
   command: /usr/bin/pecl info ZendOpcache
   register: opcacheendresult
@@ -59,3 +58,13 @@
 
 - name: Ensure php-fpm enabled and running
   service: name=php-fpm state=started enabled=yes
+
+- name: Allow http in firewall
+  firewalld: service=http permanent=true state=enabled
+  notify:
+    - restart firewalld
+
+- name: Allow https in firewall
+  firewalld: service=https permanent=true state=enabled
+  notify:
+    - restart firewalld

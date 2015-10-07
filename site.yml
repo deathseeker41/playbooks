@@ -56,3 +56,9 @@
   roles:
     - pxe
 
+- name: Push yumcache role
+  hosts: yumcache
+  vars_files:
+    - "vars/common.yml"
+  roles:
+    - yumcache

@@ -25,11 +25,13 @@
   - nagios-plugins-load
   - nagios-plugins-check-updates
   - tar
+  - firewalld
 
 - name: Start and enable needed services
   service: name={{item}} state=started enabled=yes
   with_items:
   - crond
+  - firewalld
 
 - name: Stop and disable unneeded services
   service: name={{item}} state=stopped enabled=no

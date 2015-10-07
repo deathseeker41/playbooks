@@ -7,17 +7,17 @@ krieger.deathsfolly.net
 granite.valhalla
 jupiter.valhalla
 centos1.valhalla
-janus.valhalla
 minecraft.valhalla
 centos2.valhalla
+janus.valhalla
 
 [home]
 granite.valhalla
 jupiter.valhalla
 centos1.valhalla
-janus.valhalla
 minecraft.valhalla
 centos2.valhalla
+janus.valhalla
 
 [nginx]
 krieger.deathsfolly.net
@@ -29,3 +29,6 @@ krieger.deathsfolly.net
 2001:470:8:ef9::4
 [freebsd:vars]
 ansible_python_interpreter=/usr/local/bin/python2
+
+[yumcache]
+janus.valhalla
