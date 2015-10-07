@@ -60,11 +60,7 @@
   service: name=php-fpm state=started enabled=yes
 
 - name: Allow http in firewall
-  firewalld: service=http permanent=true state=enabled
-  notify:
-    - restart firewalld
+  firewalld: service=http permanent=true state=enabled immediate=yes
 
 - name: Allow https in firewall
-  firewalld: service=https permanent=true state=enabled
-  notify:
-    - restart firewalld
+  firewalld: service=https permanent=true state=enabled immediate=yes

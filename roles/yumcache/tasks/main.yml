@@ -10,9 +10,7 @@
     - restart squid
 
 - name: Allow squid in firewall
-  firewalld: port=80/tcp permanent=true state=enabled
-  notify:
-    - restart firewalld
+  firewalld: port=80/tcp permanent=true state=enabled immediate=yes
 
 - name: Ensure squid running and enabled
   service: name=squid state=started enabled=yes
