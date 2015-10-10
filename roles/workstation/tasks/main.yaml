@@ -21,9 +21,6 @@
   with_items:
   - sshd
 
-- name: Disable SELinux
-  selinux: state=disabled
-
 - name: Remove unneeded packages
   yum: pkg={{item}} state=absent
   with_items:
