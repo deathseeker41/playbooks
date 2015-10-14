@@ -79,4 +79,4 @@
   authorized_key: user=icinga key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDYmgYEfRQWKjZKdA2fX5NwydDS9O0FB/enEtOV2ygELLrNVD/V2Jnk537G5oJzQdfa7cgDGpfdjgCIpULru8rOeQYQ3hm7fty4OuZ8kXrxjocnV6ipO7JI2lbdf5gTlRyGwk88IViDepfIjBnHrCSb8Kokll0dq3vbPuMoR6XvxHKxQ6pbr944V6R95a+njWfhksga8/dUakpLdKvi/GkFKMsSAysd8iLnV9vGIBo+Pxw60mdXBK7OnV5xkvOZ/+/6cSImWw37+d6hlHGg3ywf2uftYrB6uY9u5jJt1CwH5OTfAl1Vqtg+DOku4J/n99Qb+RLaMSUx28iLuHVKtA4gSLMmaEO4SjHQgzyidA/I1iLeSIYmD9BzDbD2zDj2ruilbzo4A0urDRuM0pHUXUQSnhr4XQ/AiSp3t/vR/dPNmx7Qd1sMpNuz8FZLsyx9Z5j0NB4Nx5N5Sg27ZwAN/IDLwhRQ0bOkCkdjnNryZcp/4QhjD5kooMMAEuJAbsIZ0S1q1abh58n5opxt+V18mKfiZdig0iYqqos6ILIsdi9GMYh9CR+fJpYPZlLkhiYVAgQfOMsj9QKDS20OAAIBpL2fnyrBRX5DVnY4dnSUfeANsQXALxDCuB1ndF8MmBOcomnbkkA8cwvb3x+NRK0kRzyvxGRfpAHxzyAVLDrFJuP6XQ== icinga@krieger.deathsfolly.net"
 
 - name: Setup ansible-pull cron
-  cron: name="ansible-pull" hour="3" job="ansible-pull -U https://github.com/deathseeker41/playbooks.git site.yml -i hosts"
+  cron: name="ansible-pull" minute="7" hour="3" job="ansible-pull -U https://github.com/deathseeker41/playbooks.git site.yml -i hosts"
