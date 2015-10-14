@@ -5,5 +5,5 @@
 - name: Install backup cron
   cron: name="backup" minute="10" hour="12" weekday="0" user="root" job="sh /root/.scripts/backup.sh"
 
-- name: Install backup private key
-  copy: src=/root/backup.key dest=/root/.ssh/backup.key owner=0 group=0 mode=600
+#- name: Install backup private key
+#  copy: src=/root/backup.key dest=/root/.ssh/backup.key owner=0 group=0 mode=600

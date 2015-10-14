@@ -8,7 +8,6 @@ granite.valhalla
 jupiter.valhalla
 centos1.valhalla
 minecraft.valhalla
-centos2.valhalla
 janus.valhalla
 
 [home]
@@ -16,7 +15,6 @@ granite.valhalla
 jupiter.valhalla
 centos1.valhalla
 minecraft.valhalla
-centos2.valhalla
 janus.valhalla
 
 [nginx]
