@@ -25,8 +25,11 @@ krieger.deathsfolly.net
 
 [freebsd]
 2001:470:8:ef9::4
-[freebsd:vars]
-ansible_python_interpreter=/usr/local/bin/python2
+demon.valhalla
 
 [yumcache]
 janus.valhalla
+
+[cpanel]
+thor.deathsfolly.net
+

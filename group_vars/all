@@ -1,3 +1,5 @@
 admin_email: "noxoid@deathsfolly.net"
 admin_pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQChY5sXCyvtfDTxmUuv1VOfgEH7Kcsj7KS9OySiCY3opI+tvqtr+Yi8vgxxu5NXIixgizIemoAYmzM5RsB7i697GQHAvqPbRcZq4uxoD+tQ4olkknODPcUI4r0o1tIg70UzB7kdX1w9oFMW6j7pF9G7ZiDaVbzEw6kCXUCIh/epbXcDSDjM+6zNbj4DZEnCldNpiqd4QrkAYA2CSMfNWOCiFAEC3KzZ139FjtxX02NzvjK2bS/9Nqk2KVbWDa04TMTvBT3s9AwdJnlNdilT+7/wAmLjGXCbmj0fDURMoKjO0yCPpgkvzJipyHfiVnLbVcqkCM7yxZEhvzIj5H2vPIsP noxoid@deathsfolly.net"
 cm_managed: "This file is managed by Ansible"
+sshd_privsep: "sandbox"
+sftp_location: "/usr/libexec/openssh/sftp-server"

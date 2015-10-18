@@ -1,0 +1,9 @@
+- name: Get local IP
+  local_action:
+      module: uri
+      url: http://checkip.amazonaws.com/
+      return_content: yes
+  register: public_ip
+
+- name: Whitelist public IP in Exim
+  lineinfile: dest=/etc/skipsmtpcheckhosts line={{ public_ip['content'] }}

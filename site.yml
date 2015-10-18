@@ -1,64 +1,50 @@
 ---
 - name: Push common role
   hosts: all
-  vars_files:
-    - "vars/common.yml"
-    - "vars/{{ ansible_os_family }}.yml"
   roles:
     - common
 
 - name: Push baremetal role
   hosts: baremetal
-  vars_files:
-    - "vars/common.yml"
   roles:
     - baremetal
 
 - name: Push centos role
   hosts: centos
-  vars_files:
-    - "vars/common.yml"
   roles:
     - centos
 
 - name: Push home role
   hosts: home
-  vars_files:
-    - "vars/common.yml"
   roles:
     - home
 
 - name: Push nginx role
   hosts: nginx
-  vars_files:
-    - "vars/common.yml"
   roles:
     - nginx
 
 - name: Push mariadb role
   hosts: mariadb
-  vars_files:
-    - "vars/common.yml"
   roles:
     - mariadb
 
 - name: Push freebsd role
   hosts: freebsd
-  vars_files:
-    - "vars/common.yml"
   roles:
     - freebsd
 
 - name: Push pxe role
   hosts: pxe
-  vars_files:
-    - "vars/common.yml"
   roles:
     - pxe
 
 - name: Push yumcache role
   hosts: yumcache
-  vars_files:
-    - "vars/common.yml"
   roles:
     - yumcache
+
+- name: Push cpanel role
+  hosts: cpanel
+  roles:
+    - cpanel

@@ -1,0 +1,2 @@
+sftp_location: "/usr/libexec/sftp-server"
+ansible_python_interpreter: "/usr/local/bin/python2"

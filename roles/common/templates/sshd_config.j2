@@ -6,5 +6,5 @@ ChallengeResponseAuthentication no
 UsePAM yes
 PrintMotd no
 UseDNS no
-UsePrivilegeSeparation sandbox
+UsePrivilegeSeparation {{ sshd_privsep }}
 Subsystem sftp {{ sftp_location }}
