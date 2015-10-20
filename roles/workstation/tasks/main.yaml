@@ -16,11 +16,6 @@
   - sshpass
   - owncloud-client
 
-- name: Stop and disable unneeded services
-  service: name={{item}} state=stopped enabled=no
-  with_items:
-  - sshd
-
 - name: Remove unneeded packages
   yum: pkg={{item}} state=absent
   with_items:
@@ -31,3 +26,8 @@
   - abiword
   - gnumeric
   - yumex
+
+
+- name: Disable public SSH port
+  firewalld: service=ssh permanent=true state=disabled immediate=yes
+
