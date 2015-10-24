@@ -1,4 +1,7 @@
 ---
+- name: Configure yum mirror
+  template: src=CentOS-Base.repo.j2 dest=/etc/yum.repos.d/CentOS-Base.repo owner=root group=root mode=644
+
 - name: Install EPEL repository
   yum: pkg=epel-release state=present
 
