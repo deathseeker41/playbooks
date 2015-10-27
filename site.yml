@@ -14,11 +14,6 @@
   roles:
     - centos
 
-- name: Push home role
-  hosts: home
-  roles:
-    - home
-
 - name: Push nginx role
   hosts: nginx
   roles:

@@ -1,1 +1,2 @@
 yum_repo_url: http://janus.valhalla/CentOS/
+postfix_relay: "[mail.deathsfolly.net]:587"
