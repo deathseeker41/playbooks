@@ -31,6 +31,7 @@
   - firewalld
   - ansible
   - postfix
+  - chrony
 
 - name: Start and enable needed services
   service: name={{item}} state=started enabled=yes
@@ -38,6 +39,7 @@
   - crond
   - firewalld
   - postfix
+  - chronyd
 
 - name: Stop and disable unneeded services
   service: name={{item}} state=stopped enabled=no
