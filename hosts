@@ -9,6 +9,7 @@ jupiter.valhalla
 centos1.valhalla
 minecraft.valhalla
 janus.valhalla
+thewall.valhalla
 
 [home]
 granite.valhalla
@@ -16,12 +17,15 @@ jupiter.valhalla
 centos1.valhalla
 minecraft.valhalla
 janus.valhalla
+thewall.valhalla
 
 [nginx]
 krieger.deathsfolly.net
+thewall.valhalla
 
 [mariadb]
 krieger.deathsfolly.net
+thewall.valhalla
 
 [freebsd]
 2001:470:8:ef9::4
@@ -31,4 +35,3 @@ janus.valhalla
 
 [cpanel]
 thor.deathsfolly.net
-

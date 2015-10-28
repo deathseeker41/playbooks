@@ -3,4 +3,6 @@
    service: name=network state=restarted
  - name: restart postfix
    service: name=postfix state=restarted
+ - name: restart chrony
+   service: name=chronyd state=restarted
 

@@ -93,3 +93,8 @@
   notify:
    - restart postfix
 
+- name: Install chrony config
+  template: src=chrony.conf.j2 dest=/etc/chrony.conf owner=0 group=0 mode=644
+  notify:
+   - restart chrony
+
