@@ -1,6 +1,9 @@
 ---
-- name: Install mariadb
-  yum: pkg=mariadb-server state=present
+- name: Install mariadb and dependencies
+  yum: pkg={{ item }} state=present
+  with_items:
+    - mariadb-server
+    - MySQL-python
 
 - name: Install mariadb settings file
   copy: src=mysettings.cnf dest=/etc/my.cnf.d/mysettings.cnf owner=0 group=0 mode=644
