@@ -10,6 +10,8 @@ centos1.valhalla
 minecraft.valhalla
 janus.valhalla
 thewall.valhalla
+gitlab.valhalla
+build0.valhalla
 
 [home]
 granite.valhalla
@@ -18,6 +20,8 @@ centos1.valhalla
 minecraft.valhalla
 janus.valhalla
 thewall.valhalla
+gitlab.valhalla
+build0.valhalla
 
 [nginx]
 krieger.deathsfolly.net

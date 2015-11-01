@@ -27,6 +27,7 @@
   - which
   - nagios-plugins-load
   - nagios-plugins-check-updates
+  - nagios-plugins-mailq
   - tar
   - firewalld
   - ansible
