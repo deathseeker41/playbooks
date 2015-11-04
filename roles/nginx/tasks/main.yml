@@ -43,6 +43,7 @@
   command: /usr/bin/pecl info ZendOpcache
   register: opcachestartresult
   ignore_errors: yes
+  changed_when: False
 
 - name: Install Zend Opcache
   command: /usr/bin/pecl install ZendOpcache
@@ -51,6 +52,7 @@
 - name: See if Zend Opcache is installed now
   command: /usr/bin/pecl info ZendOpcache
   register: opcacheendresult
+  changed_when: False
 
 - name: Add Zend Opcache to php.d
   copy: content="zend_extension=/usr/lib64/php/modules/opcache.so" dest=/etc/php.d/opcache.ini owner=0 group=0 mode=644
