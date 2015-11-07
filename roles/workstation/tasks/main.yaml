@@ -13,6 +13,7 @@
   - sshpass
   - owncloud-client
   - NetworkManager-openvpn-gnome
+  - "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
 
 - name: Remove unneeded packages
   yum: pkg={{item}} state=absent
@@ -24,7 +25,9 @@
   - abiword
   - gnumeric
   - yumex
-
+  - claws-mail
+  - midori
+  - leafpad
 
 - name: Disable public SSH port
   firewalld: service=ssh permanent=true state=disabled immediate=yes
