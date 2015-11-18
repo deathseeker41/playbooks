@@ -15,6 +15,7 @@
   - NetworkManager-openvpn-gnome
   - "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
   - python-firewall
+  - setroubleshoot
 
 - name: Remove unneeded packages
   yum: pkg={{item}} state=absent
