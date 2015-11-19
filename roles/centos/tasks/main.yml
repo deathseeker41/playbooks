@@ -1,4 +1,16 @@
 ---
+- name: Stop and disable unneeded services
+  service: name={{item}} state=stopped enabled=no
+  with_items:
+  - iprdump
+  - iprinit
+  - iprupdate
+  - kdump
+  - avahi-daemon
+  - tuned
+  - xinetd
+  - saslauthd
+
 - name: Configure yum mirror
   template: src=CentOS-Base.repo.j2 dest=/etc/yum.repos.d/CentOS-Base.repo owner=root group=root mode=644
 
@@ -32,7 +44,6 @@
   - firewalld
   - ansible
   - postfix
-  - chrony
 
 - name: Start and enable needed services
   service: name={{item}} state=started enabled=yes
@@ -40,17 +51,9 @@
   - crond
   - firewalld
   - postfix
-  - chronyd
 
-- name: Stop and disable unneeded services
-  service: name={{item}} state=stopped enabled=no
-  with_items:
-  - iprdump
-  - iprinit
-  - iprupdate
-  - kdump
-  - avahi-daemon
-  - tuned
+- include: chrony.yml
+  when: ansible_virtualization_type != "openvz"
 
 - name: Stop and disable NetworkManager
   service: name=NetworkManager state=stopped enabled=no
@@ -62,6 +65,7 @@
   with_items:
   - yum-cron
   - NetworkManager
+  - xinetd
 
 - name: Create .scripts directory
   file: path=/root/.scripts owner=0 group=0 mode=700 state=directory
@@ -93,9 +97,3 @@
   template: src=postfix.cf.j2 dest=/etc/postfix/main.cf owner=0 group=0 mode=644
   notify:
    - restart postfix
-
-- name: Install chrony config
-  template: src=chrony.conf.j2 dest=/etc/chrony.conf owner=0 group=0 mode=644
-  notify:
-   - restart chrony
-
