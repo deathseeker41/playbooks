@@ -1,0 +1,8 @@
+---
+#file is used because in a chroot kickstart env site.yml cannot be executed, we instead set it to run on first boot
+#cron will be removed by the first run of site.yml
+- name: Bootstrap CentOS
+  hosts: centos
+  tasks:
+    - name: "Add bootstrap cron"
+      cron: name="bootstrap" special_time=reboot job="ansible-pull -U https://github.com/deathseeker41/playbooks.git site.yml -i hosts > /dev/null 2>&1"
