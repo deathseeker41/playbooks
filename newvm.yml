@@ -1,0 +1,12 @@
+---
+- hosts: jupiter.valhalla
+  vars_prompt:
+    - name: "vm_name"
+      prompt: "VM Name?"
+      private: no
+  tasks:
+    - name: Create VM zvol
+      zfs: name=storage/kvm/{{ vm_name }} state=present volsize=20G
+
+    - name: Install VM
+      command: virt-install --name {{ vm_name }} --memory 1024 --disk /dev/zvol/storage/kvm/{{ vm_name }} -w bridge:br0 -l http://janus.valhalla/CentOS/7/os/x86_64/ -x "ks=http://admin.deathsfolly.net/ks2.php?host={{ vm_name }}.valhalla" --noautoconsole
