@@ -6,22 +6,20 @@ odin.deathsfolly.net
 krieger.deathsfolly.net
 granite.valhalla
 jupiter.valhalla
-centos[1:9].valhalla
+centos[1:2].valhalla
 minecraft.valhalla
 janus.valhalla
 thewall.valhalla
 gitlab.valhalla
-build0.valhalla
 
 [home]
 granite.valhalla
 jupiter.valhalla
-centos[1:9].valhalla
+centos[1:1].valhalla
 minecraft.valhalla
 janus.valhalla
 thewall.valhalla
 gitlab.valhalla
-build0.valhalla
 
 [nginx]
 krieger.deathsfolly.net

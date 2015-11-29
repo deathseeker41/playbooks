@@ -1,17 +1,27 @@
 ---
+- name: Remove conflicting packages
+  yum: pkg={{item}} state=absent
+  with_items:
+  - httpd
+
+- name: Install IUS repo
+  yum: name=https://centos7.iuscommunity.org/ius-release.rpm state=present
+
 - name: Install nginx
   yum: pkg=nginx state=present
 
 - name: Install PHP
   yum: pkg={{item}} state=present
   with_items:
-  - php-fpm
-  - php-mysql
-  - php-mbstring
+  - php56u-fpm
+  - php56u-mysqlnd
+  - php56u-mbstring
   - gcc
   - gcc-c++
-  - php-pear
-  - php-devel
+  - php56u-pear
+  - php56u-devel
+  - php56u-opcache
+  - php56u-gd
 
 - name: Create server root
   file: path=/srv/www owner=nginx group=nginx mode=755 state=directory
@@ -36,27 +46,6 @@
 
 - name: Install php-fpm config
   template: src=php-fpm.www.conf.j2 dest=/etc/php-fpm.d/www.conf owner=0 group=0 mode=644
-  notify:
-    - restart php-fpm
-
-- name: See if Zend Opcache is installed
-  command: /usr/bin/pecl info ZendOpcache
-  register: opcachestartresult
-  ignore_errors: yes
-  changed_when: False
-
-- name: Install Zend Opcache
-  command: /usr/bin/pecl install ZendOpcache
-  when: opcachestartresult|failed
-
-- name: See if Zend Opcache is installed now
-  command: /usr/bin/pecl info ZendOpcache
-  register: opcacheendresult
-  changed_when: False
-
-- name: Add Zend Opcache to php.d
-  copy: content="zend_extension=/usr/lib64/php/modules/opcache.so" dest=/etc/php.d/opcache.ini owner=0 group=0 mode=644
-  when: opcacheendresult|success
   notify:
     - restart php-fpm
 
