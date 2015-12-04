@@ -11,6 +11,7 @@ minecraft.valhalla
 janus.valhalla
 thewall.valhalla
 gitlab.valhalla
+192.168.1.202
 
 [home]
 granite.valhalla
@@ -20,6 +21,7 @@ minecraft.valhalla
 janus.valhalla
 thewall.valhalla
 gitlab.valhalla
+192.168.1.202
 
 [nginx]
 krieger.deathsfolly.net

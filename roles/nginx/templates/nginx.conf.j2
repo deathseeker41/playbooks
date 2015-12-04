@@ -1,4 +1,4 @@
-#this file is managed by ansible
+#{{ cm_managed }}
 user  nginx;
 worker_processes  1;
 error_log  /var/log/nginx/error.log;
@@ -18,15 +18,12 @@ http {
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
 
-
-
     access_log  /var/log/nginx/access.log  main;
     sendfile        on;
     keepalive_timeout  65;
     index   index.html index.htm;
-    include /etc/nginx/conf.d/*.conf;
+    {% for vhost in nginx_vhosts %}
+    include /etc/nginx/conf.d/{{ vhost }}.conf;
+    {% endfor %}
 
-    server {
-        include /etc/nginx/default.d/*.conf;
-    }
 }
