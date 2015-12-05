@@ -53,6 +53,11 @@
   notify:
     - restart php-fpm
 
+- name: Generate custom dhparams
+  command: openssl dhparam -out /etc/ssl/dhparams.pem 2048 creates=/etc/ssl/dhparams.pem
+  notify:
+    - restart nginx
+
 - name: Ensure nginx enabled and running
   service: name=nginx state=started enabled=yes
 

@@ -8,7 +8,7 @@ server {
 server {
     listen       443 ssl;
     listen       [::]:443 ssl;
-    ssl_certificate /etc/letsencrypt/live/mtr.deathsfolly.net/cert.pem;
+    ssl_certificate /etc/letsencrypt/live/mtr.deathsfolly.net/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/mtr.deathsfolly.net/privkey.pem;
     server_name  mtr.deathsfolly.net;
     error_page   500 502 503 504  /50x.html;
