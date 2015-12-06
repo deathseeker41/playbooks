@@ -12,6 +12,7 @@ janus.valhalla
 thewall.valhalla
 gitlab.valhalla
 192.168.1.202
+eye.valhalla
 
 [home]
 granite.valhalla
@@ -22,14 +23,17 @@ janus.valhalla
 thewall.valhalla
 gitlab.valhalla
 192.168.1.202
+eye.valhalla
 
 [nginx]
 krieger.deathsfolly.net
 thewall.valhalla
+eye.valhalla
 
 [mariadb]
 krieger.deathsfolly.net
 thewall.valhalla
+eye.valhalla
 
 [freebsd]
 2001:470:8:ef9::4

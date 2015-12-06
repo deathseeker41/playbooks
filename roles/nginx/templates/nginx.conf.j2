@@ -23,8 +23,9 @@ http {
     sendfile        on;
     keepalive_timeout  65;
     index   index.html index.htm;
-    {% for vhost in nginx_vhosts %}
+    {% if nginx_vhosts is defined %}
+    {% for vhost in nginx_vhosts if nginx_vhosts is defined %}
     include /etc/nginx/conf.d/{{ vhost }}.conf;
     {% endfor %}
-
+    {% endif %}
 }

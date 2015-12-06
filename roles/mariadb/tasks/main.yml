@@ -11,15 +11,6 @@
 - name: Ensure mariadb enabled and running
   service: name=mariadb state=started enabled=yes
 
-- name: Remove anonymous user
-  mysql_user: name="" host={{ item }} state="absent"
-  with_items:
-    - "{{ ansible_hostname }}"
-    - localhost
-
-- name: Remove test database
-  mysql_db: name=test state=absent
-
 - name: Generate random root password
   command: /usr/bin/openssl rand -base64 16
   register: root_passwd
@@ -33,6 +24,12 @@
     - localhost
   changed_when: False
 
+- name: Set root user
+  ini_file: dest=/root/.my.cnf
+            section=client
+            option=user
+            value=root
+
 - name: Save root password
   ini_file: dest=/root/.my.cnf
             section=client
@@ -42,3 +39,13 @@
 
 - name: Ensure safe perms on .my.cnf
   file: path=/root/.my.cnf owner=0 group=0 mode=600
+
+- name: Remove anonymous user
+  mysql_user: name="" host={{ item }} state="absent"
+  with_items:
+    - "{{ ansible_hostname }}"
+    - localhost
+
+- name: Remove test database
+  mysql_db: name=test state=absent
+

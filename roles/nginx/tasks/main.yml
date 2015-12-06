@@ -28,6 +28,7 @@
 
 - name: Create vhost roots
   file: path=/srv/www/{{ item }} owner=nginx group=nginx mode=750 state=directory
+  when: nginx_vhosts is defined
   with_items:
     - "{{ nginx_vhosts }}"
 
@@ -38,6 +39,7 @@
 
 - name: Install vhost configs
   template: src=vhosts/{{ item }}.j2 dest=/etc/nginx/conf.d/{{ item }}.conf owner=0 group=0 mode=644
+  when: nginx_vhosts is defined
   with_items:
     - "{{ nginx_vhosts }}"
   notify:
