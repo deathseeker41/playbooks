@@ -1,0 +1,23 @@
+- name: Generate random root password
+  command: /usr/bin/openssl rand -base64 16
+  register: root_passwd
+  changed_when: False
+
+
+- name: Set root password
+  mysql_user: name=root password={{ root_passwd.stdout }}
+  changed_when: False
+
+- name: Set root user
+  ini_file: dest=/root/.my.cnf
+            section=client
+            option=user
+            value=root
+
+- name: Save root password
+  ini_file: dest=/root/.my.cnf
+            section=client
+            option=password
+            value={{ root_passwd.stdout }}
+  changed_when: False
+
