@@ -13,6 +13,7 @@ thewall.valhalla
 gitlab.valhalla
 192.168.1.202
 eye.valhalla
+70.39.149.106
 
 [home]
 granite.valhalla
@@ -29,11 +30,13 @@ eye.valhalla
 krieger.deathsfolly.net
 thewall.valhalla
 eye.valhalla
+70.39.149.106
 
 [mariadb]
 krieger.deathsfolly.net
 thewall.valhalla
 eye.valhalla
+70.39.149.106
 
 [freebsd]
 2001:470:8:ef9::4
