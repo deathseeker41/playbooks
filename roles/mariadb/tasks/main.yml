@@ -43,7 +43,7 @@
 - name: Remove anonymous user
   mysql_user: name="" host={{ item }} state="absent"
   with_items:
-    - "{{ ansible_hostname }}"
+    - "{{ ansible_fqdn }}"
     - localhost
 
 - name: Remove test database
