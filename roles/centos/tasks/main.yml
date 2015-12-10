@@ -93,9 +93,6 @@
 - name: Setup ansible-pull cron
   cron: name="ansible-pull" minute="5" hour="*/3" job="ansible-pull -U https://github.com/deathseeker41/playbooks.git site.yml -i hosts > /dev/null 2>&1"
 
-- name: Remove bootstrap cron
-  cron: name="bootstrap" state=absent
-
 - name: Install CentOS 7 Postfix config
   template: src=postfix.cf.j2 dest=/etc/postfix/main.cf owner=0 group=0 mode=644
   notify:
