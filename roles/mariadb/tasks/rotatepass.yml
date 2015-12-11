@@ -3,10 +3,17 @@
   register: root_passwd
   changed_when: False
 
+- name: Remove unneeded root user
+  mysql_user: name=root host={{ ansible_fqdn }} state=absent
 
 - name: Set root password
-  mysql_user: name=root password={{ root_passwd.stdout }}
+  mysql_user: name=root host={{ item }} password={{ root_passwd.stdout }}
   changed_when: False
+  with_items:
+    - "127.0.0.1"
+    - "::1"
+    - "localhost" #must be last
+
 
 - name: Set root user
   ini_file: dest=/root/.my.cnf

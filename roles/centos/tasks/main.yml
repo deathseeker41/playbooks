@@ -32,6 +32,7 @@
   - lsof
   - unzip
   - bind-utils
+  - python-dns
   - mailx
   - git
   - cronie
