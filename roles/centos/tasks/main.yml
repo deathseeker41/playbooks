@@ -27,6 +27,7 @@
   - wget
   - mtr
   - rsync
+  - net-snmp
   - deltarpm
   - lsof
   - unzip
@@ -51,6 +52,7 @@
   - crond
   - firewalld
   - postfix
+  - snmpd
 
 - include: chrony.yml
   when: ansible_virtualization_type != "openvz"
@@ -97,3 +99,12 @@
   template: src=postfix.cf.j2 dest=/etc/postfix/main.cf owner=0 group=0 mode=644
   notify:
    - restart postfix
+
+- name: Install snmpd config
+  template: src=snmpd.conf.j2 dest=/etc/snmp/snmpd.conf owner=0 group=0 mode=600
+  notify:
+   - restart snmpd
+
+- name: Allow SNMP poller firewall access
+  firewalld: rich_rule='rule family="ipv4" source address={{ snmp_poller }} port port=161 protocol=udp accept' permanent=true state=enabled immediate=yes
+  ignore_errors: yes #https://github.com/ansible/ansible-modules-extras/issues/1080

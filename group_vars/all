@@ -3,3 +3,4 @@ admin_pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQChY5sXCyvtfDTxmUuv1VOfgEH7K
 cm_managed: "This file is managed by Ansible"
 sshd_privsep: "sandbox"
 sftp_location: "/usr/libexec/openssh/sftp-server"
+snmp_poller: "{{ lookup('dig', 'home.deathsfolly.net/A') }}"
