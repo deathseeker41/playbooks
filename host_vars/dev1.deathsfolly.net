@@ -1,0 +1,3 @@
+location: Washington
+nginx_vhosts:
+  - dev1.deathsfolly.net
