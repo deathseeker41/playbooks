@@ -1,6 +1,10 @@
 #{{ cm_managed }}
 rocommunity  deathsfolly
-syslocation  Undefined
+{% if location is defined %}
+syslocation {{ location }}
+{% else %}
+syslocation Undefined
+{% endif %}
 syscontact  noxoid@deathsfolly.net
 com2sec notConfigUser  default       deathsfolly
 group   notConfigGroup v2c           notConfigUser
