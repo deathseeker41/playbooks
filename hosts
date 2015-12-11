@@ -13,7 +13,7 @@ thewall.valhalla
 gitlab.valhalla
 192.168.1.202
 eye.valhalla
-70.39.149.106
+dev1.deathsfolly.net
 
 [home]
 granite.valhalla
@@ -30,16 +30,16 @@ eye.valhalla
 krieger.deathsfolly.net
 thewall.valhalla
 eye.valhalla
-70.39.149.106
+dev1.deathsfolly.net
 
 [mariadb]
 krieger.deathsfolly.net
 thewall.valhalla
 eye.valhalla
-70.39.149.106
+dev1.deathsfolly.net
 
 [freebsd]
-2001:470:8:ef9::4
+newera.valhalla
 
 [yumcache]
 janus.valhalla
