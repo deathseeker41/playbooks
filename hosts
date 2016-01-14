@@ -6,7 +6,7 @@ odin.deathsfolly.net
 krieger.deathsfolly.net
 granite.valhalla
 jupiter.valhalla
-centos[1:2].valhalla
+centos[1:1].valhalla
 minecraft.valhalla
 janus.valhalla
 gitlab.valhalla
@@ -16,7 +16,7 @@ dev1.deathsfolly.net
 [home]
 granite.valhalla
 jupiter.valhalla
-centos[1:2].valhalla
+centos[1:1].valhalla
 minecraft.valhalla
 janus.valhalla
 gitlab.valhalla
