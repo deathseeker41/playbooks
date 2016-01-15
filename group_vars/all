@@ -4,3 +4,5 @@ cm_managed: "This file is managed by Ansible"
 sshd_privsep: "sandbox"
 sftp_location: "/usr/libexec/openssh/sftp-server"
 snmp_poller: "{{ lookup('dig', 'home.deathsfolly.net/A') }}"
+home_ip: "{{ lookup('dig', 'home.deathsfolly.net/A') }}"
+
