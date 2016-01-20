@@ -61,7 +61,7 @@
   - avahi
   - tuned
   - xinetd
-  - cyrus-sasl
+  - polkit
 
 - name: Create .scripts directory
   file: path=/root/.scripts owner=0 group=0 mode=700 state=directory
