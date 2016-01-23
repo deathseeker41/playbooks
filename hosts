@@ -11,7 +11,6 @@ minecraft.valhalla
 janus.valhalla
 gitlab.valhalla
 eye.valhalla
-dev1.deathsfolly.net
 
 [home]
 granite.valhalla
@@ -21,19 +20,20 @@ minecraft.valhalla
 janus.valhalla
 gitlab.valhalla
 eye.valhalla
+newera.valhalla
+freebsd1.valhalla
 
 [nginx]
 krieger.deathsfolly.net
 eye.valhalla
-dev1.deathsfolly.net
 
 [mariadb]
 krieger.deathsfolly.net
 eye.valhalla
-dev1.deathsfolly.net
 
 [freebsd]
 newera.valhalla
+freebsd1.valhalla
 
 [yumcache]
 janus.valhalla

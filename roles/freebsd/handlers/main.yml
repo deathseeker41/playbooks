@@ -1,4 +1,6 @@
 ---
- - name: restart syslogd
-   service: name=syslogd state=restarted
+  - name: restart syslogd
+    service: name=syslogd state=restarted
 
+  - name: reload pf
+    service: name=pf state=reloaded

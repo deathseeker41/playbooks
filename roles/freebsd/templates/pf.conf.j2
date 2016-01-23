@@ -1,0 +1,9 @@
+block in all
+
+pass in quick inet proto tcp to port 22 keep state
+pass in quick inet6 proto tcp to port 22 keep state
+
+pass in quick inet proto icmp
+pass in quick inet6 proto ipv6-icmp
+pass out quick all keep state
+
