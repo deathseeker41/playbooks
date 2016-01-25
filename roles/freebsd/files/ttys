@@ -1,0 +1,4 @@
+console none                            unknown off secure
+ttyv0   "/usr/libexec/getty Pc"         xterm   on  secure
+ttyv1   "/usr/libexec/getty Pc"         xterm   on  secure
+ttyv2   "/usr/libexec/getty Pc"         xterm   on  secure

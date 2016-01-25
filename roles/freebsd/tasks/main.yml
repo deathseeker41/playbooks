@@ -4,6 +4,8 @@
   with_items:
     - nano
     - mtr-nox11
+    - arping
+    - pftop
 
 - name: Install PF config
   template: src=pf.conf.j2 dest=/etc/pf.conf owner=0 group=0 mode=600
@@ -13,8 +15,21 @@
 - name: Enable PF
   lineinfile: dest=/etc/rc.conf regexp=^pf_enable line=pf_enable=\"YES\"
 
+- name: Install tty config
+  copy: src=ttys dest=/etc/ttys owner=0 group=0 mode=644
+  notify:
+    - reload init
+
 - name: Disable TCP listen for syslogd
   lineinfile: dest=/etc/rc.conf regexp=^syslogd_flags line=syslogd_flags=\"-ss\"
   notify:
     - restart syslogd
 
+#dangit digital ocean :(
+- name: Remove freebsd user
+  user: name=freebsd state=absent remove=yes
+
+- name: Remove DigitalOcean configs
+  file: path={{ item }} state=absent
+  with_items:
+    - /etc/rc.d/digitalocean

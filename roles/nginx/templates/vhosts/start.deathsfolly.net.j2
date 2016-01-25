@@ -1,0 +1,20 @@
+#{{ cm_managed }}
+server {
+    listen       80;
+    listen       [::]:80;
+    server_name  start.deathsfolly.net;
+    location / {
+        autoindex on;
+        root   /srv/www/start.deathsfolly.net;
+        index  index.php index.html index.htm;
+    }
+    error_page   500 502 503 504  /50x.html;
+    location ~ \.php$ {
+        root           /srv/www/start.deathsfolly.net;
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+    }
+}
+

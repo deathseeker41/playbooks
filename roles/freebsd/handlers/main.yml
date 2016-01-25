@@ -4,3 +4,6 @@
 
   - name: reload pf
     service: name=pf state=reloaded
+
+  - name: reload init
+    command: kill -HUP 1
