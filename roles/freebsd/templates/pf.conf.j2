@@ -2,8 +2,17 @@ block in all
 
 pass in quick inet proto tcp to port 22 keep state
 pass in quick inet6 proto tcp to port 22 keep state
+{% if tcp_listen is defined %}
+{% for port in tcp_listen %}
+pass in quick inet proto tcp to port {{ port }} keep state
+pass in quick inet6 proto tcp to port {{ port }} keep state
+{% endfor %}
+{% endif %}
 
 pass in quick inet proto icmp
 pass in quick inet6 proto ipv6-icmp
+pass in quick on lo0 all
+pass out quick on lo0 all
+
 pass out quick all keep state
 
