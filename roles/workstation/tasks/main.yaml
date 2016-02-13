@@ -30,6 +30,7 @@
   - claws-mail
   - midori
   - leafpad
+  - asunder
 
 - name: Disable public SSH port
   firewalld: service=ssh permanent=true state=disabled immediate=yes

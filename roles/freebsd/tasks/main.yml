@@ -6,6 +6,13 @@
     - mtr-nox11
     - arping
     - pftop
+    - bind-tools
+    - rsync
+    - lsof
+
+- name: Set EST
+  file: src=/usr/share/zoneinfo/America/New_York dest=/etc/localtime state=link owner=0 group=0 force=yes
+
 
 - name: Install PF config
   template: src=pf.conf.j2 dest=/etc/pf.conf owner=0 group=0 mode=600
@@ -33,3 +40,11 @@
   file: path={{ item }} state=absent
   with_items:
     - /etc/rc.d/digitalocean
+
+- name: Configure sysctl
+  copy: src=sysctl.conf dest=/etc/sysctl.conf owner=0 group=0 mode=644
+  notify:
+    - apply sysctl
+
+- name: Install jail config
+  template: src=jail.conf.j2 dest=/etc/jail.conf owner=0 group=0 mode=600

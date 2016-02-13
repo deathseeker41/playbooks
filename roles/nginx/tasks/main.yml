@@ -1,6 +1,6 @@
 ---
 - name: Remove conflicting packages
-  yum: pkg={{item}} state=absent
+  package: pkg={{item}} state=absent
   with_items:
   - httpd
 
@@ -8,10 +8,10 @@
   yum: name=https://centos7.iuscommunity.org/ius-release.rpm state=present
 
 - name: Install nginx
-  yum: pkg=nginx state=present
+  package: pkg=nginx state=present
 
 - name: Install PHP
-  yum: pkg={{item}} state=present
+  package: pkg={{item}} state=present
   with_items:
   - php56u-fpm
   - php56u-mysqlnd

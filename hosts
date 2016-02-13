@@ -22,6 +22,7 @@ gitlab.valhalla
 eye.valhalla
 newera.valhalla
 freebsd1.valhalla
+phantom.valhalla
 
 [nginx]
 krieger.deathsfolly.net
@@ -35,6 +36,7 @@ eye.valhalla
 newera.valhalla
 freebsd1.valhalla
 ghost.deathsfolly.net
+phantom.valhalla
 
 [yumcache]
 janus.valhalla

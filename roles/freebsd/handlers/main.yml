@@ -7,3 +7,6 @@
 
   - name: reload init
     command: kill -HUP 1
+
+  - name: apply sysctl
+    command: sysctl -f /etc/sysctl.conf
