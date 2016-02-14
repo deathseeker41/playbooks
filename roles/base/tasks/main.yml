@@ -3,3 +3,5 @@
 
 - name: Setup root forwarder
   copy: content={{ admin_email }} dest=/root/.forward owner=0 group=0 mode=600
+
+- include: "{{ ansible_distribution }}.yml"

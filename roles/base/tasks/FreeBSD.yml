@@ -13,7 +13,6 @@
 - name: Set EST
   file: src=/usr/share/zoneinfo/America/New_York dest=/etc/localtime state=link owner=0 group=0 force=yes
 
-
 - name: Install PF config
   template: src=pf.conf.j2 dest=/etc/pf.conf owner=0 group=0 mode=600
   notify:

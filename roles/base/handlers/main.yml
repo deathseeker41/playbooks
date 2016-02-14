@@ -2,3 +2,4 @@
  - name: restart sshd
    service: name=sshd state=restarted
 
+ - include: "{{ ansible_distribution }}.yml"

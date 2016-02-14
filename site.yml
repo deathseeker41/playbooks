@@ -1,18 +1,13 @@
 ---
-- name: Push common role
+- name: Push base role
   hosts: all
   roles:
-    - common
+    - base
 
 - name: Push baremetal role
   hosts: baremetal
   roles:
     - baremetal
-
-- name: Push centos role
-  hosts: centos
-  roles:
-    - centos
 
 - name: Push nginx role
   hosts: nginx
@@ -23,11 +18,6 @@
   hosts: mariadb
   roles:
     - mariadb
-
-- name: Push freebsd role
-  hosts: freebsd
-  roles:
-    - freebsd
 
 - name: Push pxe role
   hosts: pxe
