@@ -2,15 +2,14 @@
 jupiter.valhalla
 
 [centos]
-odin.deathsfolly.net
 krieger.deathsfolly.net
 granite.valhalla
 jupiter.valhalla
 centos[1:1].valhalla
 minecraft.valhalla
 janus.valhalla
-gitlab.valhalla
-eye.valhalla
+zombie.deathsfolly.net
+cig1.valhalla
 
 [home]
 granite.valhalla
@@ -18,11 +17,8 @@ jupiter.valhalla
 centos[1:1].valhalla
 minecraft.valhalla
 janus.valhalla
-gitlab.valhalla
-eye.valhalla
-newera.valhalla
-freebsd1.valhalla
 phantom.valhalla
+cig1.valhalla
 
 [nginx]
 krieger.deathsfolly.net
@@ -33,8 +29,6 @@ krieger.deathsfolly.net
 eye.valhalla
 
 [freebsd]
-newera.valhalla
-freebsd1.valhalla
 ghost.deathsfolly.net
 phantom.valhalla
 

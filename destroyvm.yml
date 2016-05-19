@@ -7,6 +7,7 @@
   tasks:
     - name: Stop VM
       virt: name={{ vm_name }} state=destroyed
+    - pause: seconds=3
     - name: Remove VM zvol
       zfs: name=storage/kvm/{{ vm_name }} state=absent
     - name: Undefine VM

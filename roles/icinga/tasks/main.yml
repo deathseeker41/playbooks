@@ -1,0 +1,3 @@
+---
+- name: Install Icinga
+  pkgng: name=icinga2 state=present

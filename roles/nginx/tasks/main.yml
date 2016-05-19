@@ -6,6 +6,7 @@
 
 - name: Install IUS repo
   yum: name=https://centos7.iuscommunity.org/ius-release.rpm state=present
+  when: ansible_distribution == "CentOS"
 
 - name: Install nginx
   package: pkg=nginx state=present
@@ -13,15 +14,7 @@
 - name: Install PHP
   package: pkg={{item}} state=present
   with_items:
-  - php56u-fpm
-  - php56u-mysqlnd
-  - php56u-mbstring
-  - gcc
-  - gcc-c++
-  - php56u-pear
-  - php56u-devel
-  - php56u-opcache
-  - php56u-gd
+  - "{{ php_packages.ansible_distribution }}"
 
 - name: Create server root
   file: path=/srv/www owner=nginx group=nginx mode=755 state=directory

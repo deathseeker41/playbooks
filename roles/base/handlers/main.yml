@@ -1,5 +1,18 @@
 ---
- - name: restart sshd
-   service: name=sshd state=restarted
+- name: restart sshd
+  service: name=sshd state=restarted
 
- - include: "{{ ansible_distribution }}.yml"
+- name: restart syslogd
+  service: name=syslogd state=restarted
+
+- name: reload pf
+  service: name=pf state=reloaded
+
+- name: reload init
+  command: kill -HUP 1
+
+- name: apply sysctl
+  command: sysctl -f /etc/sysctl.conf
+
+- name: restart sshguard
+  service: name=sshguard state=restarted

@@ -1,3 +1,5 @@
+table <sshguard> persist
+block drop in log quick from <sshguard> to any
 block in all
 
 pass in quick inet proto tcp to port 22 keep state

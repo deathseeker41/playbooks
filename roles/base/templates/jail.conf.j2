@@ -4,7 +4,7 @@ exec.clean;
 mount.devfs;
 path = "/jails/$name";
 allow.raw_sockets=1;
-interface = em0;
+interface = {{ ansible_default_ipv4['device'] }};
 allow.chflags=1;
 
 {% if jails is defined %}

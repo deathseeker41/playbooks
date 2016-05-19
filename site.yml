@@ -3,33 +3,59 @@
   hosts: all
   roles:
     - base
+  tags:
+    - centos
+    - freebsd
 
 - name: Push baremetal role
   hosts: baremetal
   roles:
     - baremetal
+  tags:
+    - centos
 
 - name: Push nginx role
   hosts: nginx
   roles:
     - nginx
+  tags:
+    - centos
+  vars:
+    php_packages:
+      - FreeBSD: []
+      - CentOS: ["php56u-fpm","php56u-mysqlnd","php56u-mbstring","gcc","gcc-c","php56u-pear","php56u-devel","php56u-opcache","php56u-gd"]
+
 
 - name: Push mariadb role
   hosts: mariadb
   roles:
     - mariadb
+  tags:
+    - centos
 
 - name: Push pxe role
   hosts: pxe
   roles:
     - pxe
+  tags:
+    - centos
 
 - name: Push yumcache role
   hosts: yumcache
   roles:
     - yumcache
+  tags:
+    - centos
 
 - name: Push cpanel role
   hosts: cpanel
   roles:
     - cpanel
+  tags:
+    - centos
+
+
+- name: push icinga role
+  hosts: icinga
+  roles:
+    - icinga
