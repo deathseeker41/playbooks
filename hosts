@@ -9,7 +9,6 @@ centos[1:1].valhalla
 minecraft.valhalla
 janus.valhalla
 zombie.deathsfolly.net
-cig1.valhalla
 
 [home]
 granite.valhalla
@@ -17,8 +16,6 @@ jupiter.valhalla
 centos[1:1].valhalla
 minecraft.valhalla
 janus.valhalla
-phantom.valhalla
-cig1.valhalla
 
 [nginx]
 krieger.deathsfolly.net
@@ -30,10 +27,12 @@ eye.valhalla
 
 [freebsd]
 ghost.deathsfolly.net
-phantom.valhalla
 
 [yumcache]
 janus.valhalla
 
-[cpanel]
-thor.deathsfolly.net
+#[cpanel]
+#thor.deathsfolly.net
+
+[icinga]
+krieger.deathsfolly.net

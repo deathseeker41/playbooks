@@ -1,25 +1,21 @@
 ---
 - name: Push base role
   hosts: all
+  strategy: free
   roles:
     - base
-  tags:
-    - centos
-    - freebsd
 
 - name: Push baremetal role
   hosts: baremetal
+  strategy: free 
   roles:
     - baremetal
-  tags:
-    - centos
 
 - name: Push nginx role
   hosts: nginx
+  strategy: free 
   roles:
     - nginx
-  tags:
-    - centos
   vars:
     php_packages:
       FreeBSD:
@@ -30,34 +26,24 @@
 
 - name: Push mariadb role
   hosts: mariadb
+  strategy: free 
   roles:
     - mariadb
-  tags:
-    - centos
-
-- name: Push pxe role
-  hosts: pxe
-  roles:
-    - pxe
-  tags:
-    - centos
 
 - name: Push yumcache role
   hosts: yumcache
+  strategy: free 
   roles:
     - yumcache
-  tags:
-    - centos
 
 - name: Push cpanel role
   hosts: cpanel
+  strategy: free 
   roles:
     - cpanel
-  tags:
-    - centos
-
 
 - name: push icinga role
   hosts: icinga
+  strategy: free 
   roles:
     - icinga

@@ -1,7 +1,0 @@
-NAME="{{ pxenet }}"
-HWADDR="{{ hostvars[inventory_hostname]['ansible_' + pxenet]['macaddress'] }}"
-ONBOOT=yes
-IPV6INIT=no
-BOOTPROTO=static
-IPADDR={{ pxeip }}
-NETMASK=255.255.255.0

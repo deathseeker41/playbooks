@@ -3,4 +3,3 @@ nginx_vhosts:
   - mtr.deathsfolly.net
   - yum.deathsfolly.net
   - start.deathsfolly.net
-location: New York
