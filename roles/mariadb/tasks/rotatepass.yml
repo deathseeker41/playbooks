@@ -13,7 +13,7 @@
     - "127.0.0.1"
     - "::1"
     - "localhost" #must be last
-
+  when: ansible_check_mode == False
 
 - name: Set root user
   ini_file: dest=/root/.my.cnf
@@ -27,4 +27,4 @@
             option=password
             value={{ root_passwd.stdout }}
   changed_when: False
-
+  when: ansible_check_mode == False
