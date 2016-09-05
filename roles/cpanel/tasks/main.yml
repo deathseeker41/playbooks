@@ -1,2 +1,0 @@
-- name: Whitelist home IP in Exim
-  lineinfile: dest=/etc/skipsmtpcheckhosts line={{ home_ip }}

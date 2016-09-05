@@ -1,5 +1,0 @@
-nginx_vhosts:
-  - krieger.deathsfolly.net
-  - mtr.deathsfolly.net
-  - yum.deathsfolly.net
-  - start.deathsfolly.net

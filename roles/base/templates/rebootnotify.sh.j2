@@ -1,3 +1,0 @@
-#!/bin/sh
-#{{ cm_managed }}
-echo "$(hostname) back online at $(date)" | mail -s "REBOOT: $(hostname -s)" {{ admin_email }}

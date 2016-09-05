@@ -1,7 +1,0 @@
----
-- name: Update OS
-  hosts: centos
-  gather_facts: no
-  tasks:
-    - name: Run yum update
-      yum: name=* state=latest update_cache=yes

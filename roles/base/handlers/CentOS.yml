@@ -1,9 +1,0 @@
----
- - name: restart network
-   service: name=network state=restarted
- - name: restart postfix
-   service: name=postfix state=restarted
- - name: restart chrony
-   service: name=chronyd state=restarted
- - name: restart snmpd
-   service: name=snmpd state=restarted
