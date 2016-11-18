@@ -11,25 +11,6 @@
   roles:
     - baremetal
 
-- name: Push nginx role
-  hosts: nginx
-  strategy: free 
-  roles:
-    - nginx
-  vars:
-    php_packages:
-      FreeBSD:
-        - []
-      CentOS:
-        - ["php56u-fpm","php56u-mysqlnd","php56u-mbstring","gcc","php56u-pear","php56u-devel","php56u-opcache","php56u-gd"]
-
-
-- name: Push mariadb role
-  hosts: mariadb
-  strategy: free 
-  roles:
-    - mariadb
-
 - name: Push yumcache role
   hosts: yumcache
   strategy: free 
@@ -42,8 +23,3 @@
   roles:
     - cpanel
 
-- name: push icinga role
-  hosts: icinga
-  strategy: free 
-  roles:
-    - icinga
