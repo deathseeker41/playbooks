@@ -11,7 +11,6 @@
   - git
   - lynx
   - sshpass
-  - owncloud-client
   - NetworkManager-openvpn-gnome
   - "https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm"
   - python-firewall
@@ -21,9 +20,8 @@
   yum: pkg={{item}} state=absent
   with_items:
   - xfdashboard
-  - geany
-  - pragha
   - xfburn
+  - geany
   - abiword
   - gnumeric
   - yumex
